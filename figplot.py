@@ -36,9 +36,9 @@ def figplot(state_space_coverage, action_space_coverage):
     axScatter.scatter(batt_state,henergy_state,marker='.',s = 30, alpha=0.1, c=cmap(6));
     axScatter.set_xlabel("Battery")
     axScatter.set_ylabel("Harvested Energy")
-    plt.text(0.5,0.5,
-             s = r'$\sigma$'+" = "+ str(np.around(np.var(state_space_coverage), decimals=2)), 
-             transform = axScatter.transAxes)
+#     plt.text(0.5,0.5,
+#              s = r'$\sigma$'+" = "+ str(np.around(np.var(state_space_coverage), decimals=2)), 
+#              transform = axScatter.transAxes)
 
     axScatter.set_xlim([0, 1])
     axScatter.set_ylim([0, 1])
@@ -100,10 +100,11 @@ def figplot3(state_space_coverage, action_space_coverage, explore_action_space_c
     axScatter.scatter(batt_state,henergy_state,marker='.',s = 30, alpha=0.1, c=cmap(6));
     axScatter.set_xlabel("Battery", fontsize=14)
     axScatter.set_ylabel("Harvested Energy", fontsize=14)
-    plt.text(0.5,0.5,
-             s = r'$\sigma$'+" = "+ str(np.around(np.var(state_space_coverage), decimals=2)), 
-             transform = axScatter.transAxes)
-
+#     plt.text(0.5,0.5,
+#              s = r'$\sigma$'+" = "+ str(np.around(np.var(state_space_coverage), decimals=2)), 
+#              transform = axScatter.transAxes)
+    axScatter.set_xlim([0, 1])
+    axScatter.set_ylim([0, 1])
 
     axHistx.hist(state_space_coverage[:,0],bins=100,color=cmap(1),log=not False,histtype='step');
     axHistx.tick_params(labelbottom=False)
